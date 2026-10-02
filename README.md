@@ -1,56 +1,46 @@
-# Welcome to your Expo app 👋
+IT313 Components and JSX
+Student Roster Card Renderer
+This project is a React Native and Expo application for Laboratory 4 in IT313 - Mobile Programming.
+The activity demonstrates how functional components, JSX, props, conditional rendering, and list keys can be used to create a simple student roster.
+Problem
+The application receives a list of enrolled students. Each student should be displayed using a reusable StudentCard component.
+Each card displays:
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- Student name
+- Course
+- Number of units
+- Full Load label when the student is enrolled in a full load
+  The application also displays the total number of students and includes a button for reversing the roster order.
+  Component Structure
+  StudentCard
+  StudentCard is a reusable functional component.
+  It receives these props:
+- name
+- course
+- units
+- isFullLoad
+  The props are destructured in the function parameter. The component uses JSX expressions to display the student information.
+  The Full Load label uses conditional rendering with the && operator, so it only appears when isFullLoad is true.
+  StudentRoster
+  StudentRoster is the parent component that contains the student data.
+  It uses .map() to create one StudentCard for every student in the array.
+  Each StudentCard uses the student's id as its key:
+  key={student.id}
+  The student count is calculated using:
+  students.length
+  The roster can also be reversed using a button.
+  Technologies Used
+- React Native
+- Expo
+- TypeScript
+- JSX
+  How to Run
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
+1. Open the project folder in a terminal.
+2. Install the project dependencies:
    npm install
-   ```
-
-2. Start the app
-
-   ```bash
+3. Start the Expo development server:
    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+4. Open the application using Expo Go or an emulator.
+   Author
+   Jhazmin PalmesIT313 - Mobile Programming
